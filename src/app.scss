@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  width: 100VW;
+  height: 100VH;
+  overflow-x: hidden;
+  position: relative;
+  .sidebar-container{
+    position: sticky;
+    top:0;
+  }
+  .right-container{
+    position: sticky;
+    top:0;
+  }
+}

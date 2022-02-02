@@ -1,0 +1,15 @@
+  $twitter-color: #1d9bf0;
+  $twitter-background: #e6ecf0;
+
+  @mixin centerRow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  @mixin centerColumn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }

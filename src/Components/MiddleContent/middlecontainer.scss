@@ -1,0 +1,10 @@
+.middle-container{
+    color: white;
+    max-width: 500px;
+}
+
+@media (min-width:1000px) {
+    .middle-container{
+        flex: 0.5;
+    }
+}
