@@ -2,6 +2,7 @@
   border: 1px solid grey;
   border-top: none;
   padding: 5px 15px 15px 15px;
+  position: relative;
   .home-navbar {
     display: flex;
     justify-content: space-between;
@@ -17,14 +18,42 @@
     gap: 1rem;
     margin-top: 1rem;
     margin-bottom: 2rem;
-    input {
-      height: 3rem;
+    textarea {
       font-size: 1.5rem;
       width: 100%;
-      border: none;
       background: transparent;
       color: white;
       outline: none;
+      padding: 10px;
+      resize: horizontal;
+      overflow: hidden;
+      border: none;
+      height: 3rem;
+    }
+  }
+  .image-container {
+    position: relative;
+    img {
+      object-fit: contain;
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 1rem;
+    }
+    button {
+      position: absolute;
+      z-index: 1;
+      width: 42px;
+      left: 2%;
+      top: 2%;
+      border-radius: 50%;
+      border: none;
+      background-color: rgba(0, 0, 0, 0.767);
+      color: white;
+      padding: 5px;
+      cursor: pointer;
+      .icon {
+        margin-top: 2px;
+      }
     }
   }
   .icons-container {
@@ -35,6 +64,9 @@
     padding-top: 1.5rem;
     margin-left: 4rem;
     .icon {
+      display: flex;
+      .photo {
+      }
       .MuiSvgIcon-root {
         color: #1d9bf0;
         padding: 5px;
@@ -56,7 +88,7 @@
       font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
-      &:hover {
+      &:disabled {
         background: #1383ce;
       }
     }

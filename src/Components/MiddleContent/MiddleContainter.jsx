@@ -1,12 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./middlecontainer.scss";
 import Tweet from "./Tweet";
 import Post from "./Post";
+import { collection, orderBy, onSnapshot, query } from "firebase/firestore";
+import { db } from "../../firebase";
 
 function MiddleContainter() {
+  const [post, setPosts] = useState([]);
+  const database = db;
+
+  useEffect(
+    () =>
+      onSnapshot(
+        query(collection(database, "posts"), orderBy("timestamp", "desc")),
+        (snapshot) => {
+          setPosts(snapshot.docs.map((doc) => doc.data()));
+        }
+      ),
+    [database]
+  );
+
   return (
     <div className="middle-container">
       <Tweet />
+      {post?.map((post) => (
+        <Post
+          key={post.timestamp}
+          name="Cong Ta"
+          user="@cta"
+          time={`${post.timestamp?.toDate().toLocaleString()}`}
+          message={post.text}
+          image={post.image}
+          msgcount={`${Math.floor(Math.random() * 100)}k`}
+          pollcount={`${Math.floor(Math.random() * 100)}k`}
+          likecount={`${Math.floor(Math.random() * 150)}k`}
+          avatar="C"
+        />
+      ))}
+
       <Post
         name="Elon Musk"
         user="@elonmusk"

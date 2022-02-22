@@ -5,6 +5,7 @@ import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import ScreenShareOutlinedIcon from "@mui/icons-material/ScreenShareOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import IosShareOutlinedIcon from "@mui/icons-material/IosShareOutlined";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 import "./post.scss";
 
 function Post({
@@ -16,12 +17,13 @@ function Post({
   msgcount,
   pollcount,
   likecount,
+  avatar,
 }) {
   return (
     <div className="post-container">
       <div className="title">
         <Avatar sx={{ bgcolor: "#1d9bf0", width: "3rem", height: "3rem" }}>
-          E
+          {avatar}
         </Avatar>
         <div className="tweet-info">
           <div className="user-info">
@@ -31,7 +33,7 @@ function Post({
             <p>  {time}</p>
           </div>
           <p className="tweet-message">{message}</p>
-          <img src={image} alt="tweet"/>
+          <img src={image} alt=""/>
           <div className="icons">
             <div className="icons-item">
               <ChatBubbleOutlineIcon />
@@ -49,6 +51,9 @@ function Post({
               <IosShareOutlinedIcon />
             </div>
           </div>
+        </div>
+        <div className="more-icon">
+          <MoreVertIcon className="more" style={{transform:'rotate(90deg)'}}/>
         </div>
       </div>
     </div>
